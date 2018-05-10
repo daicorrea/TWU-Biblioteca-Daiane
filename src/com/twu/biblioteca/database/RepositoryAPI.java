@@ -4,12 +4,18 @@ import com.twu.biblioteca.book.Book;
 
 import java.util.ArrayList;
 
-public class RepositoryAPI {
+public class RepositoryAPI implements RepositoryAPIInterface {
 
+    @Override
     public ArrayList getAllBooks() {
-        ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(new Book("Book1"));
-        bookList.add(new Book("Book2"));
-        return bookList;
+        return bookDepositoryMock();
+    }
+
+    private ArrayList<Book> bookDepositoryMock() {
+        ArrayList<Book> bookMockList = new ArrayList();
+        bookMockList.add(new Book("Alice in Wonderland"));
+        bookMockList.add(new Book("Harry Potter"));
+
+        return bookMockList;
     }
 }

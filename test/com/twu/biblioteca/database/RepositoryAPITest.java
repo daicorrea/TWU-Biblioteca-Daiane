@@ -20,5 +20,7 @@ public class RepositoryAPITest {
     public void shouldReturnBookList() {
         RepositoryAPI repositoryAPI = new RepositoryAPI();
         Assert.assertEquals(repositoryAPI.getAllBooks(), bookList);
+
+        RepositoryAPIInterface repositoryAPIInterface = new RepositoryAPI();
     }
 }
