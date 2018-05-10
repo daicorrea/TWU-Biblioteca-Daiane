@@ -1,5 +1,5 @@
 package com.twu.biblioteca.Menu;
 
-public interface Printable {
+public interface MessageInterface {
     String showWelcomeMessage();
 }

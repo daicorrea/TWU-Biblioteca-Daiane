@@ -1,17 +1,17 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.Menu.Message;
-import com.twu.biblioteca.Menu.Printable;
+import com.twu.biblioteca.Menu.MessageInterface;
 
 public class BibliotecaApp {
 
-    private Printable message;
+    private MessageInterface message;
 
     public BibliotecaApp() {
         this(new Message());
     }
 
-    BibliotecaApp(Printable message){
+    BibliotecaApp(MessageInterface message){
         this.message = message;
     }
 
@@ -19,6 +19,6 @@ public class BibliotecaApp {
         String welcome = message.showWelcomeMessage();
         message.showWelcomeMessage();
         System.out.println(welcome);
-
     }
+
 }
