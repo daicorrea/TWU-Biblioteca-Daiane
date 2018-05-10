@@ -27,7 +27,6 @@ public class BookControllerTest {
     @Test
     public void shouldReturnAllBooks() {
         BookController bookController = new BookController(bookListMock);
-        System.out.println(bookListMock);
         Assert.assertEquals(bookController.getAllBooks(), bookListMock);
     }
 
@@ -61,31 +60,4 @@ public class BookControllerTest {
 
 
 
-//    private BookController bookController;
-//
-//    private DataRepository dataRepository;
-//
-//    Class BookMock implements BookInterface {
-//        String name;
-//
-//
-//    }
-//
-//    @Test
-//    public void shouldReturnAllBooks() {
-//        //arrange
-//        DataRepository = mock(DataRepository.class);
-//        bookController = new BookController(dataRepository);
-//        int quantityExpected = 2;
-//        List<Book> expectedBooks = asList(new Book("book1"), new Book("book2"));
-//        when(dataRepository.getAllBooks()).thenReturn(asList(new Book("book1"), new Book("book2")));
-//
-//        //act
-//        List<Book> results = bookController.getAllBooks();
-//
-//        //assert
-//        assertThat(results.size(),is(quantityExpected));
-//        assertThat(results,is(expectedBooks));
-//
-//    }
 }

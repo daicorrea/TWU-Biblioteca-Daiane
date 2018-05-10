@@ -1,10 +1,8 @@
 package com.twu.biblioteca.book;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import com.twu.biblioteca.database.RepositoryAPI;
 
-import static java.util.Arrays.asList;
+import java.util.List;
 
 public class BookController {
 
@@ -15,19 +13,8 @@ public class BookController {
     }
 
     public List<Book> getAllBooks() {
-        ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(new Book("Book1"));
-        bookList.add(new Book("Book2"));
-        return bookList;
+        RepositoryAPI repositoryAPI = new RepositoryAPI();
+        return repositoryAPI.getAllBooks();
     }
 
-    //    private DataRepository dataRepository;
-//
-//    public BookController(DataRepository dataRepository) {
-//        this.dataRepository = dataRepository;
-//    }
-//
-//    public List<Book> getAllBooks() {
-//        return dataRepository.getAllBooks();
-//    }
 }

@@ -1,13 +1,12 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Menu.Message;
-import com.twu.biblioteca.Menu.Printable;
+import com.twu.biblioteca.Menu.MessageInterface;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class BibliotecaAppTest {
 
-    class MessageMock implements Printable {
+    class MessageMock implements MessageInterface {
         boolean didCallShowWelcomeMessage = false;
         int didCallShowWelcomeMessageCount = 0;
 
