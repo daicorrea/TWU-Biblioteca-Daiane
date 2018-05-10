@@ -1,9 +1,8 @@
 package com.twu.biblioteca.book;
 
+import com.twu.biblioteca.database.RepositoryAPI;
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,48 +15,19 @@ import static org.mockito.Mockito.when;
 
 public class BookControllerTest {
 
-    private ArrayList<Book> bookListMock = new ArrayList<>();
+    private static ArrayList<Book> bookListMock;
 
-    @Before
-    public void setUp() throws Exception {
-        bookListMock.add(new Book("Book1"));
-        bookListMock.add(new Book("Book2"));
+    @BeforeClass
+    public static void setUp() throws Exception {
+        bookListMock = new ArrayList<>();
+        bookListMock.add(new Book("Alice in Wonderland"));
+        bookListMock.add(new Book("Harry Potter"));
     }
 
     @Test
     public void shouldReturnAllBooks() {
-        BookController bookController = new BookController(bookListMock);
+        BookController bookController = new BookController();
         Assert.assertEquals(bookController.getAllBooks(), bookListMock);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

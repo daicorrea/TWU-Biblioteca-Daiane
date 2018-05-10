@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Menu.Message;
 import com.twu.biblioteca.Menu.MessageInterface;
+import com.twu.biblioteca.book.BookController;
 
 public class BibliotecaApp {
 
@@ -19,6 +20,11 @@ public class BibliotecaApp {
         String welcome = message.showWelcomeMessage();
         message.showWelcomeMessage();
         System.out.println(welcome);
+    }
+
+    public void printList() {
+        BookController bookController = new BookController();
+        System.out.println(bookController.getAllBooks());
     }
 
 }

@@ -4,9 +4,8 @@ import com.twu.biblioteca.book.Book;
 
 import java.util.ArrayList;
 
-public class RepositoryAPI implements RepositoryAPIInterface {
+public class RepositoryAPI {
 
-    @Override
     public ArrayList getAllBooks() {
         return bookDepositoryMock();
     }
