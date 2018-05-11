@@ -28,9 +28,14 @@ public class BibliotecaApp {
     public void printBookList() {
         BookController bookController = new BookController();
         ArrayList<Book> bookList = bookController.getAllBooks();
+        System.out.println("\nThis are all the books we have available right now:\n");
+        System.out.println("-------------------------------------------------------------");
+        System.out.println(String.format("|%-25s|", "BOOK NAME") + (String.format("%-20s|", "AUTHOR")) + (String.format("%-12s|", "RELEASE YEAR")));
+        System.out.println("-------------------------------------------------------------");
         for(int i = 0; i < bookList.size(); i++) {
             System.out.println(bookList.get(i).toString());
         }
+        System.out.println("-------------------------------------------------------------");
     }
 
 }

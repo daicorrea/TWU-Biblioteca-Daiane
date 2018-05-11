@@ -10,8 +10,8 @@ public class BookControllerTest {
     @BeforeClass
     public static void setUp() throws Exception {
         bookListMock = new ArrayList<>();
-        bookListMock.add(new Book("Alice in Wonderland", "Lewis Carroll"));
-        bookListMock.add(new Book("Harry Potter", "J.K. Rowling"));
+        bookListMock.add(new Book("Alice in Wonderland", "Lewis Carroll", 1865));
+        bookListMock.add(new Book("Harry Potter", "J.K. Rowling", 1997));
     }
 
     @Test
