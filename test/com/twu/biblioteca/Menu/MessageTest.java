@@ -16,6 +16,6 @@ public class MessageTest {
 
     @Test
     public void shouldReturnMessageWithWelcome() {
-        assertThat(message.showWelcomeMessage(), containsString("welcome"));
+        assertThat(message.showWelcomeMessage(), containsString("Welcome"));
     }
 }

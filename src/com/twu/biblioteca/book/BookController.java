@@ -5,14 +5,14 @@ import com.twu.biblioteca.database.RepositoryAPI;
 import java.util.ArrayList;
 
 public class BookController {
-    private  RepositoryAPI repository;
+    private  RepositoryAPI repositoryAPI;
 
     public BookController() {
-        repository = new RepositoryAPI();
+        repositoryAPI = new RepositoryAPI();
     }
 
     public ArrayList<Book> getAllBooks() {
-        return repository.getAllBooks();
+        return repositoryAPI.getAllBooks();
     }
 
 }

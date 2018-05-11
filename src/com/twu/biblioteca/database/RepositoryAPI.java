@@ -11,7 +11,7 @@ public class RepositoryAPI {
         return bookDepositoryMock();
     }
 
-    public ArrayList getMainMenu() {
+    public Menu getMainMenu() {
         return mainMenuMock();
     }
 
@@ -23,10 +23,10 @@ public class RepositoryAPI {
         return bookMockList;
     }
 
-    private ArrayList<String> mainMenuMock() {
+    private Menu mainMenuMock() {
         ArrayList<String>  mainMenuMockList = new ArrayList<>();
         mainMenuMockList.add("1. List Books");
-
-        return mainMenuMockList;
+        Menu mainMenu = new Menu(mainMenuMockList);
+        return mainMenu;
     }
 }
