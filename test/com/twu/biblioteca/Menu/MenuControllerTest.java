@@ -6,18 +6,20 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class MenuTest {
+public class MenuControllerTest {
+    private static Menu menu;
     private static ArrayList mainMenuList;
 
     @BeforeClass
     public static void setUp() throws Exception {
         mainMenuList = new ArrayList<String>();
         mainMenuList.add("1. List Books");
+        menu = new Menu(mainMenuList);
     }
 
     @Test
     public void shouldReturnAMenu() {
         MenuController menuController = new MenuController();
-        Assert.assertEquals(menuController.getMainMenu(), mainMenuList);
+        Assert.assertEquals(menuController.getMainMenu(), menu);
     }
 }
