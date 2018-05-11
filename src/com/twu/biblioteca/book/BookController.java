@@ -2,7 +2,7 @@ package com.twu.biblioteca.book;
 
 import com.twu.biblioteca.database.RepositoryAPI;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class BookController {
     private  RepositoryAPI repository;
@@ -11,7 +11,7 @@ public class BookController {
         repository = new RepositoryAPI();
     }
 
-    public List<Book> getAllBooks() {
+    public ArrayList<Book> getAllBooks() {
         return repository.getAllBooks();
     }
 
