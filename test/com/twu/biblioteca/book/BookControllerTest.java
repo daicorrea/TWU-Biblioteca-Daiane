@@ -1,17 +1,7 @@
 package com.twu.biblioteca.book;
-
-import com.twu.biblioteca.database.RepositoryAPI;
-import org.hamcrest.CoreMatchers;
 import org.junit.*;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static java.util.Arrays.asList;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class BookControllerTest {
 
@@ -20,8 +10,8 @@ public class BookControllerTest {
     @BeforeClass
     public static void setUp() throws Exception {
         bookListMock = new ArrayList<>();
-        bookListMock.add(new Book("Alice in Wonderland"));
-        bookListMock.add(new Book("Harry Potter"));
+        bookListMock.add(new Book("Alice in Wonderland", "Lewis Carroll"));
+        bookListMock.add(new Book("Harry Potter", "J.K. Rowling"));
     }
 
     @Test

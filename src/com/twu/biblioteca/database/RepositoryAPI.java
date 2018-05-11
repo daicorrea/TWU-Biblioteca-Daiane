@@ -12,8 +12,8 @@ public class RepositoryAPI {
 
     private ArrayList<Book> bookDepositoryMock() {
         ArrayList<Book> bookMockList = new ArrayList();
-        bookMockList.add(new Book("Alice in Wonderland"));
-        bookMockList.add(new Book("Harry Potter"));
+        bookMockList.add(new Book("Alice in Wonderland", "Lewis Carroll"));
+        bookMockList.add(new Book("Harry Potter", "J.K. Rowling"));
 
         return bookMockList;
     }

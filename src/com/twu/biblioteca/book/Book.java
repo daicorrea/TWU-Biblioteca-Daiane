@@ -1,21 +1,23 @@
 package com.twu.biblioteca.book;
 
 public class Book {
-    private final String name;
+    private String name;
+    private String author;
 
-    public Book(String book1) {
-        this.name = book1;
+    public Book(String book, String author) {
+        this.name = book;
+        this.author = author;
     }
 
     @Override
     public boolean equals(Object book) {
         Book otherBook = (Book) book;
-        return name.equals(otherBook.name);
+        return this.toString().equals(otherBook.toString());
     }
 
     @Override
     public String toString() {
-        return name;
+        return (String.format("|%-25s|", name) + (String.format("%-20s|", author)));
     }
 
 }
