@@ -8,12 +8,10 @@ public class BibliotecaAppTest {
 
     class MessageMock implements MessageInterface {
         boolean didCallShowWelcomeMessage = false;
-        int didCallShowWelcomeMessageCount = 0;
 
         @Override
         public String showWelcomeMessage() {
             didCallShowWelcomeMessage = true;
-            didCallShowWelcomeMessageCount++;
             return null;
         }
     }
@@ -26,6 +24,5 @@ public class BibliotecaAppTest {
         biblioteca.printInit();
 
         Assert.assertTrue(message.didCallShowWelcomeMessage);
-        Assert.assertEquals(2, message.didCallShowWelcomeMessageCount);
     }
 }
