@@ -13,13 +13,19 @@ public class BibliotecaApp {
 
     public void printInit() {
         MyPrinter myPrinter = new MyPrinter(System.out);
-        myPrinter.print("Hello! Welcome to the wonderful world of the Biblioteca! How can I help you?");
+        Message message = new Message();
+        MenuParser menuParser = new MenuParser();
+        BookController bookController = new BookController();
+
+        myPrinter.print(message.showWelcomeMessage());
         myPrinter.print(Menu.buildPrintedMenu());
 
         myPrinter.print("Choose option: ");
         String option = reader.nextLine();
 
-        new MenuDispatcher(new BookController()).dispach(new MenuParser().parse(option));
+        new MenuDispatcher(bookController).dispach(menuParser.parse(option));
+
+
     }
 
 

@@ -12,7 +12,12 @@ public class MenuDispatcher {
 
     public void dispach(Menu option) {
         if (option == Menu.LIST_BOOKS) {
-            new MyPrinter(System.out).print(bookController.getAllBooks());
+            new MyPrinter(System.out).print(bookController.buildPrintedBookList());
+        } else if (option == Menu.QUIT) {
+            new MyPrinter(System.out).print("Bye");
+            System.exit(0);
+        } else {
+            new MyPrinter(System.out).print("Select a valid option!");
         }
     }
 }

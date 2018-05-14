@@ -1,6 +1,5 @@
 package com.twu.biblioteca.database;
 
-import com.twu.biblioteca.Menu.Menu;
 import com.twu.biblioteca.book.Book;
 
 import java.util.ArrayList;
@@ -18,11 +17,4 @@ public class RepositoryAPI {
 
         return bookMockList;
     }
-
-//    private Menu mainMenuMock() {
-//        ArrayList<String>  mainMenuMockList = new ArrayList<>();
-//        mainMenuMockList.add("1. List Books");
-//        Menu mainMenu = new Menu(mainMenuMockList);
-//        return mainMenu;
-//    }
 }
