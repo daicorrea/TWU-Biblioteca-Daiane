@@ -1,23 +1,20 @@
 package com.twu.biblioteca.Menu;
 
-import java.util.ArrayList;
+public enum Menu {
+    LIST_BOOKS("1 - List Books"),QUIT("2 - Quit");
 
-public class Menu {
-
-    private ArrayList<String> mainMenu;
-
-    public Menu(ArrayList<String> mainMenu) {
-        this.mainMenu = mainMenu;
+    public String menuOption;
+    Menu(String menuOption) {
+        this.menuOption = menuOption;
     }
 
-    @Override
-    public boolean equals(Object menu) {
-        Menu otherMenu = (Menu) menu;
-        return this.toString().equals(otherMenu.toString());
-    }
+    public static String buildPrintedMenu() {
+        StringBuilder builder = new StringBuilder();
 
-    @Override
-    public String toString() {
-        return String.join(", ", this.mainMenu);
+        for(Menu menu: values()) {
+            builder.append(menu.menuOption);
+            builder.append("\n");
+        }
+        return builder.toString();
     }
 }
