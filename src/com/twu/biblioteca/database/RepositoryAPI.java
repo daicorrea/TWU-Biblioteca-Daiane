@@ -11,10 +11,6 @@ public class RepositoryAPI {
         return bookDepositoryMock();
     }
 
-    public Menu getMainMenu() {
-        return mainMenuMock();
-    }
-
     private ArrayList<Book> bookDepositoryMock() {
         ArrayList<Book> bookMockList = new ArrayList();
         bookMockList.add(new Book("Alice in Wonderland", "Lewis Carroll",1865));
@@ -23,10 +19,10 @@ public class RepositoryAPI {
         return bookMockList;
     }
 
-    private Menu mainMenuMock() {
-        ArrayList<String>  mainMenuMockList = new ArrayList<>();
-        mainMenuMockList.add("1. List Books");
-        Menu mainMenu = new Menu(mainMenuMockList);
-        return mainMenu;
-    }
+//    private Menu mainMenuMock() {
+//        ArrayList<String>  mainMenuMockList = new ArrayList<>();
+//        mainMenuMockList.add("1. List Books");
+//        Menu mainMenu = new Menu(mainMenuMockList);
+//        return mainMenu;
+//    }
 }

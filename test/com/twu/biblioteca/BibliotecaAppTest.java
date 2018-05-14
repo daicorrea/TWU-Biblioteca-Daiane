@@ -21,9 +21,9 @@ public class BibliotecaAppTest {
     @Test
     public void shouldCallShowWelcomeMessage() {
         MessageMock message = new MessageMock();
-        BibliotecaApp biblioteca = new BibliotecaApp(message);
+        BibliotecaApp biblioteca = new BibliotecaApp();
 
-        biblioteca.printWelcome();
+        biblioteca.printInit();
 
         Assert.assertTrue(message.didCallShowWelcomeMessage);
         Assert.assertEquals(2, message.didCallShowWelcomeMessageCount);

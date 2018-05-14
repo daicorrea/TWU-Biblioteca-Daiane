@@ -1,41 +1,29 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Menu.Message;
-import com.twu.biblioteca.Menu.MessageInterface;
-import com.twu.biblioteca.book.Book;
+import com.twu.biblioteca.Menu.*;
 import com.twu.biblioteca.book.BookController;
+import com.twu.biblioteca.utils.MyPrinter;
 
-import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class BibliotecaApp {
 
-    private MessageInterface message;
+    private  Scanner reader = new Scanner(System.in);
 
-    public BibliotecaApp() {
-        this(new Message());
+    public void printInit() {
+        MyPrinter myPrinter = new MyPrinter(System.out);
+        myPrinter.print("Hello! Welcome to the wonderful world of the Biblioteca! How can I help you?");
+        myPrinter.print(Menu.buildPrintedMenu());
+
+        myPrinter.print("Choose option: ");
+        String option = reader.nextLine();
+
+        new MenuDispatcher(new BookController()).dispach(new MenuParser().parse(option));
     }
 
-    BibliotecaApp(MessageInterface message){
-        this.message = message;
-    }
 
-    public void printWelcome() {
-        String welcome = message.showWelcomeMessage();
-        message.showWelcomeMessage();
-        System.out.println(welcome);
-    }
 
-    public void printBookList() {
-        BookController bookController = new BookController();
-        ArrayList<Book> bookList = bookController.getAllBooks();
-        System.out.println("\nThis are all the books we have available right now:\n");
-        System.out.println("-------------------------------------------------------------");
-        System.out.println(String.format("|%-25s|", "BOOK NAME") + (String.format("%-20s|", "AUTHOR")) + (String.format("%-12s|", "RELEASE YEAR")));
-        System.out.println("-------------------------------------------------------------");
-        for(int i = 0; i < bookList.size(); i++) {
-            System.out.println(bookList.get(i).toString());
-        }
-        System.out.println("-------------------------------------------------------------");
-    }
+
 
 }
