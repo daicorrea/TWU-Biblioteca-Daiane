@@ -10,8 +10,8 @@ public class BookControllerTest {
     @BeforeClass
     public static void setUp() throws Exception {
         bookListMock = new ArrayList<>();
-        bookListMock.add(new Book("Alice in Wonderland", "Lewis Carroll", 1865));
-        bookListMock.add(new Book("Harry Potter", "J.K. Rowling", 1997));
+        bookListMock.add(new Book(1,"Alice in Wonderland", "Lewis Carroll", 1865));
+        bookListMock.add(new Book(2,"Harry Potter", "J.K. Rowling", 1997));
     }
 
     @Test
@@ -20,4 +20,10 @@ public class BookControllerTest {
         Assert.assertEquals(bookController.getAllBooks(), bookListMock);
     }
 
+    @Test
+    public void shouldCheckoutBook() {
+        BookController bookController = new BookController();
+        Assert.assertTrue(bookController.checkOutBook(bookListMock, 1));
+        Assert.assertTrue(bookListMock.get(0).isCheckedOut());
+    }
 }

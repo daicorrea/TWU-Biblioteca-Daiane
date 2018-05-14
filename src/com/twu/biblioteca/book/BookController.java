@@ -33,4 +33,13 @@ public class BookController implements BookControllerInterface {
         return builder.toString();
     }
 
+    public boolean checkOutBook(ArrayList<Book> bookList, int checkBookID) {
+        for(Book book: bookList) {
+            if (book.getBookID() == checkBookID && !book.isCheckedOut()) {
+                book.setCheckedOut(true);
+                return true;
+            }
+        }
+        return false;
+    }
 }
