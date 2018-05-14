@@ -7,7 +7,7 @@ public class MenuParser {
         } else if (option.equals("2")) {
             return Menu.QUIT;
         } else {
-            throw new RuntimeException("Invalid Option");
+            return Menu.OTHER;
         }
     }
 }

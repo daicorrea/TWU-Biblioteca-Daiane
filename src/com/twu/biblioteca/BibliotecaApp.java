@@ -20,7 +20,7 @@ public class BibliotecaApp {
         myPrinter.print(message.showWelcomeMessage());
         myPrinter.print(Menu.buildPrintedMenu());
 
-        myPrinter.print("Choose option: ");
+        myPrinter.print("Choose an option: ");
         String option = reader.nextLine();
 
         new MenuDispatcher(bookController).dispach(menuParser.parse(option));
