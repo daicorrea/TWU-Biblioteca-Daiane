@@ -25,5 +25,11 @@ public class MenuDispatcherTest {
             didCallGetAllBooks = true;
             return null;
         }
+
+        @Override
+        public String buildPrintedBookList() {
+            didCallGetAllBooks = true;
+            return null;
+        }
     }
 }
