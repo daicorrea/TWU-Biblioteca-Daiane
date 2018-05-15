@@ -18,9 +18,11 @@ public class MenuDispatcher {
         } else if (option == Menu.QUIT) {
             myPrinter.print("See you!");
             System.exit(0);
-        } else {
-            MenuParser menuParser = new MenuParser();
-            menuParser.mainMenuSelect();
+        } else if (option == Menu.CHECKOUT) {
+            bookController.checkOutBook();
+        }
+        else {
+            myPrinter.print("Invalid Menu Option. \n");
         }
     }
 }

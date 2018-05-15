@@ -31,5 +31,10 @@ public class MenuDispatcherTest {
             didCallGetAllBooks = true;
             return null;
         }
+
+        @Override
+        public void checkOutBook() {
+
+        }
     }
 }
