@@ -7,4 +7,5 @@ public interface BookControllerInterface {
     String buildPrintedBookList();
     String buildPrintedAvailableBookList();
     void checkOutBook();
+    void returnBook();
 }

@@ -46,6 +46,11 @@ public class MenuDispatcherTest {
         }
 
         @Override
+        public void returnBook() {
+
+        }
+
+        @Override
         public String buildPrintedAvailableBookList() {
             didCallGetAllAvailableBooks = false;
             return null;

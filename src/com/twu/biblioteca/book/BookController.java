@@ -62,9 +62,9 @@ public class BookController implements BookControllerInterface {
         MyPrinter myPrinter = new MyPrinter(System.out);
 
         myPrinter.print("Please enter the Book ID you want to Checkout: ");
-        int checkOutBookID = Integer.parseInt(reader.nextLine());
+        int bookID = Integer.parseInt(reader.nextLine());
 
-        boolean didCheckedOut = changeBookCheckoutStatus(getAllBooks(), checkOutBookID);
+        boolean didCheckedOut = changeBookCheckoutStatus(getAllBooks(), bookID, true);
 
         if (didCheckedOut) {
             myPrinter.print("Thank you! Enjoy the book");
@@ -75,10 +75,28 @@ public class BookController implements BookControllerInterface {
         menuParser.mainMenuSelect();
     }
 
-    public boolean changeBookCheckoutStatus(ArrayList<Book> bookList, int checkOutBookID) {
+    public void returnBook() {
+        Scanner reader = new Scanner(System.in);
+        MyPrinter myPrinter = new MyPrinter(System.out);
+
+        myPrinter.print("Please enter the Book ID you want to Return: ");
+        int bookID = Integer.parseInt(reader.nextLine());
+
+        boolean didReturnBook = changeBookCheckoutStatus(getAllBooks(), bookID, false);
+
+        if (didReturnBook) {
+            myPrinter.print("Thank you for returning the book.");
+        } else {
+            myPrinter.print("That is not a valid book to return.");
+        }
+
+        menuParser.mainMenuSelect();
+    }
+
+    public boolean changeBookCheckoutStatus(ArrayList<Book> bookList, int bookID, boolean status) {
         for(Book book: bookList) {
-            if (book.getBookID() == checkOutBookID && !book.isCheckedOut()) {
-                book.setCheckedOut(true);
+            if (book.getBookID() == bookID && book.isCheckedOut() != status) {
+                book.setCheckedOut(status);
                 return true;
             }
         }

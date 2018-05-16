@@ -23,6 +23,8 @@ public class MenuDispatcher {
             System.exit(0);
         } else if (option == Menu.CHECKOUT) {
             bookController.checkOutBook();
+        } else if (option == Menu.RETURN_BOOK) {
+            bookController.returnBook();
         }
         else {
             myPrinter.print("Invalid Menu Option. \n");

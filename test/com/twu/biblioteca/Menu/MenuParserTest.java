@@ -11,6 +11,7 @@ public class MenuParserTest {
         Assert.assertEquals(menuParser.parse("0"), Menu.QUIT);
         Assert.assertEquals(menuParser.parse("1"), Menu.LIST_BOOKS);
         Assert.assertEquals(menuParser.parse("2"), Menu.CHECKOUT);
+        Assert.assertEquals(menuParser.parse("3"), Menu.RETURN_BOOK);
         Assert.assertEquals(menuParser.parse("5"), Menu.OTHER);
     }
 }

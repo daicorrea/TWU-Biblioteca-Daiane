@@ -21,6 +21,8 @@ public class MenuParser {
             return Menu.LIST_BOOKS;
         } else if (option.equals("2")) {
             return Menu.CHECKOUT;
+        } else if (option.equals("3")) {
+            return Menu.RETURN_BOOK;
         } else {
             return Menu.OTHER;
         }

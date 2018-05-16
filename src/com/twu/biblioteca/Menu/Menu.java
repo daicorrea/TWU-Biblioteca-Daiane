@@ -1,7 +1,7 @@
 package com.twu.biblioteca.Menu;
 
 public enum Menu {
-    LIST_BOOKS("1 - List Books"), CHECKOUT("2 - Checkout Book"), QUIT("0 - Quit"), OTHER("");
+    LIST_BOOKS("1 - List Books"), CHECKOUT("2 - Checkout Book"), RETURN_BOOK("3 - Return Book"), QUIT("0 - Quit"), OTHER("");
 
     public String menuOption;
     Menu(String menuOption) {

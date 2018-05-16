@@ -31,16 +31,31 @@ public class BookControllerTest {
     }
 
     @Test
-    public void shouldChangeBookCheckOutStatus() {
+    public void shouldChangeBookCheckOutStatusToTrue() {
         BookController bookController = new BookController(new MenuParser());
-        Assert.assertTrue(bookController.changeBookCheckoutStatus(bookListMock, 1));
+        Assert.assertTrue(bookController.changeBookCheckoutStatus(bookListMock, 1, true));
         Assert.assertTrue(bookListMock.get(0).isCheckedOut());
     }
 
     @Test
     public void shouldReturnBookListWithCheckedOutBooksFalseStatus() {
         BookController bookController = new BookController(new MenuParser());
-        bookController.changeBookCheckoutStatus(bookListMock, 1);
+        bookController.changeBookCheckoutStatus(bookListMock, 1, true);
         Assert.assertEquals(bookListMock, bookListCheckedOutMock);
+    }
+
+    @Test
+    public void shouldChangeBookCheckOutStatusToFalse() {
+        BookController bookController = new BookController(new MenuParser());
+        bookController.changeBookCheckoutStatus(bookListMock, 1, true);
+        Assert.assertTrue(bookController.changeBookCheckoutStatus(bookListMock, 1, false));
+        Assert.assertFalse(bookListMock.get(0).isCheckedOut());
+    }
+
+    @Test
+    public void shouldReturnBookListWithCheckedOutBooksTrueStatus() {
+        BookController bookController = new BookController(new MenuParser());
+        bookController.changeBookCheckoutStatus(bookListCheckedOutMock, 1, false);
+        Assert.assertEquals(bookListCheckedOutMock, bookListMock);
     }
 }
