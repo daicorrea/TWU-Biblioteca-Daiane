@@ -17,8 +17,17 @@ public class MenuDispatcherTest {
         assertTrue(bookControllerMock.didCallGetAllBooks);
     }
 
+    @Test
+    public void shouldDispachToGetAllAvailableBooks() {
+        BookControllerMock bookControllerMock = new BookControllerMock();
+        MenuDispatcher menuDispatcher = new MenuDispatcher(bookControllerMock, new MenuParser());
+        menuDispatcher.dispach(Menu.LIST_BOOKS);
+        assertTrue(bookControllerMock.didCallGetAllAvailableBooks);
+    }
+
     private class BookControllerMock implements BookControllerInterface {
         boolean didCallGetAllBooks;
+        boolean didCallGetAllAvailableBooks;
 
         @Override
         public ArrayList<Book> getAllBooks() {
@@ -34,7 +43,12 @@ public class MenuDispatcherTest {
 
         @Override
         public void checkOutBook() {
+        }
 
+        @Override
+        public String buildPrintedAvailableBookList() {
+            didCallGetAllAvailableBooks = false;
+            return null;
         }
     }
 }

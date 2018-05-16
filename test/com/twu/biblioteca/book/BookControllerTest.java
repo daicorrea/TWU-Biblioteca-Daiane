@@ -36,4 +36,11 @@ public class BookControllerTest {
         Assert.assertTrue(bookController.changeBookCheckoutStatus(bookListMock, 1));
         Assert.assertTrue(bookListMock.get(0).isCheckedOut());
     }
+
+    @Test
+    public void shouldReturnBookListWithCheckedOutBooksFalseStatus() {
+        BookController bookController = new BookController(new MenuParser());
+        bookController.changeBookCheckoutStatus(bookListMock, 1);
+        Assert.assertEquals(bookListMock, bookListCheckedOutMock);
+    }
 }

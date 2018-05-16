@@ -16,7 +16,7 @@ public class MenuDispatcher {
         MyPrinter myPrinter = new MyPrinter(System.out);
 
         if (option == Menu.LIST_BOOKS) {
-            myPrinter.print(bookController.buildPrintedBookList());
+            myPrinter.print(bookController.buildPrintedAvailableBookList());
             menuParser.mainMenuSelect();
         } else if (option == Menu.QUIT) {
             myPrinter.print("See you!");
@@ -26,6 +26,7 @@ public class MenuDispatcher {
         }
         else {
             myPrinter.print("Invalid Menu Option. \n");
+            menuParser.mainMenuSelect();
         }
     }
 }
