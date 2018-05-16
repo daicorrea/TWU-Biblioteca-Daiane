@@ -10,8 +10,8 @@ public class MenuParser {
     private MenuDispatcher menuDispatcher;
 
     public MenuParser() {
-        this.bookController = new BookController();
-        this.menuDispatcher = new MenuDispatcher(this.bookController);
+        this.bookController = new BookController(this);
+        this.menuDispatcher = new MenuDispatcher(this.bookController, this);
     }
 
     public Menu parse(String option) {

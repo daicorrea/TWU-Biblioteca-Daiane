@@ -12,7 +12,7 @@ public class MenuDispatcherTest {
     @Test
     public void shouldDispachToGetAllBooks() {
         BookControllerMock bookControllerMock = new BookControllerMock();
-        MenuDispatcher menuDispatcher = new MenuDispatcher(bookControllerMock);
+        MenuDispatcher menuDispatcher = new MenuDispatcher(bookControllerMock, new MenuParser());
         menuDispatcher.dispach(Menu.LIST_BOOKS);
         assertTrue(bookControllerMock.didCallGetAllBooks);
     }

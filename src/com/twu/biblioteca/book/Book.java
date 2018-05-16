@@ -15,6 +15,14 @@ public class Book {
         this.checkedOut = false;
     }
 
+    public Book(int bookID, String book, String author, int releaseYear, boolean checkedOut) {
+        this.bookID = bookID;
+        this.name = book;
+        this.author = author;
+        this.releaseYear = releaseYear;
+        this.checkedOut = checkedOut;
+    }
+
     public boolean isCheckedOut() {
         return checkedOut;
     }
@@ -35,6 +43,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return (String.format("|%-25s|", name) + (String.format("%-20s|", author)) + (String.format("%-12s|", releaseYear)));
+        return (String.format("|%-40s|", name) + (String.format("%-20s|", author)) + (String.format("%-12s|", releaseYear)) + (String.format("%-12s|", checkedOut)));
     }
 }

@@ -5,9 +5,11 @@ import com.twu.biblioteca.utils.MyPrinter;
 
 public class MenuDispatcher {
     BookControllerInterface bookController;
+    private MenuParser menuParser;
 
-    public MenuDispatcher(BookControllerInterface bookController) {
+    public MenuDispatcher(BookControllerInterface bookController, MenuParser menuParser) {
         this.bookController = bookController;
+        this.menuParser = menuParser;
     }
 
     public void dispach(Menu option) {
@@ -15,6 +17,7 @@ public class MenuDispatcher {
 
         if (option == Menu.LIST_BOOKS) {
             myPrinter.print(bookController.buildPrintedBookList());
+            menuParser.mainMenuSelect();
         } else if (option == Menu.QUIT) {
             myPrinter.print("See you!");
             System.exit(0);
