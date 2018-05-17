@@ -5,23 +5,16 @@ import com.twu.biblioteca.book.BookControllerInterface;
 import org.junit.Test;
 
 import java.util.ArrayList;
+
 import static org.junit.Assert.assertTrue;
 
 public class MenuDispatcherTest {
 
     @Test
-    public void shouldDispachToGetAllBooks() {
+    public void shouldDispatchToPrintAvailableBookList() {
         BookControllerMock bookControllerMock = new BookControllerMock();
         MenuDispatcher menuDispatcher = new MenuDispatcher(bookControllerMock, new MenuParser());
-        menuDispatcher.dispach(Menu.LIST_BOOKS);
-        assertTrue(bookControllerMock.didCallGetAllBooks);
-    }
-
-    @Test
-    public void shouldDispachToGetAllAvailableBooks() {
-        BookControllerMock bookControllerMock = new BookControllerMock();
-        MenuDispatcher menuDispatcher = new MenuDispatcher(bookControllerMock, new MenuParser());
-        menuDispatcher.dispach(Menu.LIST_BOOKS);
+        menuDispatcher.dispachToPrintAvailableBookList(bookControllerMock);
         assertTrue(bookControllerMock.didCallGetAllAvailableBooks);
     }
 
@@ -52,7 +45,7 @@ public class MenuDispatcherTest {
 
         @Override
         public String buildPrintedAvailableBookList() {
-            didCallGetAllAvailableBooks = false;
+            didCallGetAllAvailableBooks = true;
             return null;
         }
     }

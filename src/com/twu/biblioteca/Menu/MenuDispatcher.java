@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Menu;
 
+import com.twu.biblioteca.book.BookController;
 import com.twu.biblioteca.book.BookControllerInterface;
 import com.twu.biblioteca.utils.MyPrinter;
 
@@ -16,7 +17,7 @@ public class MenuDispatcher {
         MyPrinter myPrinter = new MyPrinter(System.out);
 
         if (option == Menu.LIST_BOOKS) {
-            myPrinter.print(bookController.buildPrintedAvailableBookList());
+            dispachToPrintAvailableBookList(bookController);
             menuParser.mainMenuSelect();
         } else if (option == Menu.QUIT) {
             myPrinter.print("See you!");
@@ -30,5 +31,10 @@ public class MenuDispatcher {
             myPrinter.print("Invalid Menu Option. \n");
             menuParser.mainMenuSelect();
         }
+    }
+
+    public void dispachToPrintAvailableBookList(BookControllerInterface bookController) {
+        MyPrinter myPrinter = new MyPrinter(System.out);
+        myPrinter.print(bookController.buildPrintedAvailableBookList());
     }
 }
