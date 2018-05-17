@@ -43,6 +43,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return (String.format("|%-40s|", name) + (String.format("%-20s|", author)) + (String.format("%-12s|", releaseYear)));
+        return (String.format("|%-8s|", bookID) + String.format("%-40s|", name) + (String.format("%-20s|", author)) + (String.format("%-12s|", releaseYear)));
     }
 }
