@@ -19,18 +19,11 @@ public class MenuDispatcherTest {
     }
 
     private class BookControllerMock implements BookControllerInterface {
-        boolean didCallGetAllBooks;
         boolean didCallGetAllAvailableBooks;
 
         @Override
         public ArrayList<Book> getAllBooks() {
-            didCallGetAllBooks = true;
-            return null;
-        }
-
-        @Override
-        public String buildPrintedBookList() {
-            didCallGetAllBooks = true;
+            didCallGetAllAvailableBooks = true;
             return null;
         }
 

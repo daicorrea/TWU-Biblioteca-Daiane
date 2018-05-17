@@ -21,23 +21,6 @@ public class BookController implements BookControllerInterface {
         return repositoryAPI.getAllBooks();
     }
 
-    public String buildPrintedBookList() {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("\nThis are all the books we have right now:\n");
-        builder.append("------------------------------------------------------------------------------------\n");
-        builder.append(String.format("|%-8s|", "BOOK ID") + String.format("%-40s|", "BOOK NAME") + (String.format("%-20s|", "AUTHOR")) + (String.format("%-12s|\n", "RELEASE YEAR")));
-        builder.append("------------------------------------------------------------------------------------\n");
-
-        for(Book book: getAllBooks()) {
-            builder.append(book.toString());
-            builder.append("\n");
-        }
-
-        builder.append("------------------------------------------------------------------------------------\n");
-        return builder.toString();
-    }
-
     public String buildPrintedAvailableBookList() {
         StringBuilder builder = new StringBuilder();
 
