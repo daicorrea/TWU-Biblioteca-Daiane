@@ -35,4 +35,14 @@ public class MovieController implements MovieControllerInterface {
         builder.append("----------------------------------------------------------------------------------------------------\n");
         return builder.toString();
     }
+
+    public boolean changeCheckedOutStatus(ArrayList<Movie> movieList, int movieID, boolean checkOutStatus) {
+        for (Movie movie: movieList) {
+            if (movie.getMovieID() == movieID && movie.isCheckedOut() != checkOutStatus) {
+                movie.setCheckedOut(checkOutStatus);
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -6,6 +6,7 @@ public class Movie {
     private int year;
     private String director;
     private int movieRating;
+    boolean checkedOut;
 
     public Movie(int movieID, String name, int year, String director, int movieRating) {
         this.movieID = movieID;
@@ -13,6 +14,28 @@ public class Movie {
         this.year = year;
         this.director = director;
         this.movieRating = movieRating;
+        this.checkedOut = false;
+    }
+
+    public Movie(int movieID, String name, int year, String director, int movieRating, boolean checkedOut) {
+        this.movieID = movieID;
+        this.name = name;
+        this.year = year;
+        this.director = director;
+        this.movieRating = movieRating;
+        this.checkedOut = checkedOut;
+    }
+
+    public int getMovieID() {
+        return movieID;
+    }
+
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
     }
 
     @Override
