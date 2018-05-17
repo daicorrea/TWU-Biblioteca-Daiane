@@ -6,13 +6,15 @@ import com.twu.biblioteca.utils.MyPrinter;
 public class BibliotecaApp {
 
     public void printInit() {
-
-        MyPrinter myPrinter = new MyPrinter(System.out);
-        Message message = new Message();
+        callWelcomeMessage(new Message());
         MenuParser menuParser = new MenuParser();
-
-        myPrinter.print(message.showWelcomeMessage());
         menuParser.mainMenuSelect();
     }
+
+    public void callWelcomeMessage(MessageInterface message) {
+        MyPrinter myPrinter = new MyPrinter(System.out);
+        myPrinter.print(message.showWelcomeMessage());
+    }
+
 
 }
