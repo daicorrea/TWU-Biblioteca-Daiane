@@ -1,17 +1,20 @@
 package com.twu.biblioteca.Menu;
 
 import com.twu.biblioteca.book.BookController;
+import com.twu.biblioteca.movie.MovieController;
 import com.twu.biblioteca.utils.MyPrinter;
 
 import java.util.Scanner;
 
 public class MenuParser {
     private BookController bookController;
+    private MovieController movieController;
     private MenuDispatcher menuDispatcher;
 
     public MenuParser() {
         this.bookController = new BookController(this);
-        this.menuDispatcher = new MenuDispatcher(this.bookController, this);
+        this.movieController = new MovieController(this);
+        this.menuDispatcher = new MenuDispatcher(this.bookController, this.movieController, this);
     }
 
     public Menu parse(String option) {
@@ -23,6 +26,8 @@ public class MenuParser {
             return Menu.CHECKOUT;
         } else if (option.equals("3")) {
             return Menu.RETURN_BOOK;
+        } else if (option.equals("4")) {
+            return Menu.LIST_MOVIES;
         } else {
             return Menu.OTHER;
         }

@@ -1,15 +1,17 @@
 package com.twu.biblioteca.Menu;
 
-import com.twu.biblioteca.book.BookController;
 import com.twu.biblioteca.book.BookControllerInterface;
+import com.twu.biblioteca.movie.MovieControllerInterface;
 import com.twu.biblioteca.utils.MyPrinter;
 
 public class MenuDispatcher {
     BookControllerInterface bookController;
+    MovieControllerInterface movieController;
     private MenuParser menuParser;
 
-    public MenuDispatcher(BookControllerInterface bookController, MenuParser menuParser) {
+    public MenuDispatcher(BookControllerInterface bookController, MovieControllerInterface movieController, MenuParser menuParser) {
         this.bookController = bookController;
+        this.movieController = movieController;
         this.menuParser = menuParser;
     }
 
@@ -26,6 +28,9 @@ public class MenuDispatcher {
             bookController.checkOutBook();
         } else if (option == Menu.RETURN_BOOK) {
             bookController.returnBook();
+        } else if (option == Menu.LIST_MOVIES) {
+            dispachToPrintAvailableMovieList(movieController);
+            menuParser.mainMenuSelect();
         }
         else {
             myPrinter.print("Invalid Menu Option. \n");
@@ -36,5 +41,10 @@ public class MenuDispatcher {
     public void dispachToPrintAvailableBookList(BookControllerInterface bookController) {
         MyPrinter myPrinter = new MyPrinter(System.out);
         myPrinter.print(bookController.buildPrintedAvailableBookList());
+    }
+
+    public void dispachToPrintAvailableMovieList(MovieControllerInterface movieController) {
+        MyPrinter myPrinter = new MyPrinter(System.out);
+        myPrinter.print(movieController.buildPrintedAvailableMovieList());
     }
 }
