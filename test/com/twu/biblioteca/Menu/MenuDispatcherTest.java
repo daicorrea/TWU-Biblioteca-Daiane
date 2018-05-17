@@ -69,5 +69,10 @@ public class MenuDispatcherTest {
             return null;
         }
 
+        @Override
+        public void checkOutMovie() {
+
+        }
+
     }
 }

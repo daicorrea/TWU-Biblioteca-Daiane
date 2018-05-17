@@ -36,7 +36,7 @@ public class MovieControllerTest {
     @Test
     public void shouldChangeCheckedOutStatusToTrue() {
         MovieController movieController = new MovieController(new MenuParser());
-        movieController.changeCheckedOutStatus(movieListMock, 3, true);
+        movieController.changeMovieCheckedOutStatus(movieListMock, 3, true);
         Assert.assertEquals(movieListMock, movieListCheckedOutMock);
     }
 }

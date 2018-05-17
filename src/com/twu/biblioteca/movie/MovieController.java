@@ -2,8 +2,10 @@ package com.twu.biblioteca.movie;
 
 import com.twu.biblioteca.Menu.MenuParser;
 import com.twu.biblioteca.database.RepositoryAPI;
+import com.twu.biblioteca.utils.MyPrinter;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MovieController implements MovieControllerInterface {
     private RepositoryAPI repositoryAPI;
@@ -28,15 +30,17 @@ public class MovieController implements MovieControllerInterface {
         builder.append("----------------------------------------------------------------------------------------------------\n");
 
         for(Movie movie: getAllMovies()) {
-            builder.append(movie.toString());
-            builder.append("\n");
+            if(!movie.isCheckedOut()) {
+                builder.append(movie.toString());
+                builder.append("\n");
+            }
         }
 
         builder.append("----------------------------------------------------------------------------------------------------\n");
         return builder.toString();
     }
 
-    public boolean changeCheckedOutStatus(ArrayList<Movie> movieList, int movieID, boolean checkOutStatus) {
+    public boolean changeMovieCheckedOutStatus(ArrayList<Movie> movieList, int movieID, boolean checkOutStatus) {
         for (Movie movie: movieList) {
             if (movie.getMovieID() == movieID && movie.isCheckedOut() != checkOutStatus) {
                 movie.setCheckedOut(checkOutStatus);
@@ -44,5 +48,23 @@ public class MovieController implements MovieControllerInterface {
             }
         }
         return false;
+    }
+
+    public void checkOutMovie() {
+        Scanner reader = new Scanner(System.in);
+        MyPrinter myPrinter = new MyPrinter(System.out);
+
+        myPrinter.print("Please enter the Movie ID you want to Checkout: ");
+        int movieID = Integer.parseInt(reader.nextLine());
+
+        boolean didCheckedOut = changeMovieCheckedOutStatus(getAllMovies(), movieID, true);
+
+        if (didCheckedOut) {
+            myPrinter.print("Thank you! Enjoy the book");
+        } else {
+            myPrinter.print("That book is not available");
+        }
+
+        menuParser.mainMenuSelect();
     }
 }

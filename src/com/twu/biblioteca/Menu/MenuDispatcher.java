@@ -24,13 +24,15 @@ public class MenuDispatcher {
         } else if (option == Menu.QUIT) {
             myPrinter.print("See you!");
             System.exit(0);
-        } else if (option == Menu.CHECKOUT) {
+        } else if (option == Menu.CHECKOUT_BOOK) {
             bookController.checkOutBook();
         } else if (option == Menu.RETURN_BOOK) {
             bookController.returnBook();
         } else if (option == Menu.LIST_MOVIES) {
             dispachToPrintAvailableMovieList(movieController);
             menuParser.mainMenuSelect();
+        } else if (option == Menu.CHECKOUT_MOVIE) {
+            movieController.checkOutMovie();
         }
         else {
             myPrinter.print("Invalid Menu Option. \n");

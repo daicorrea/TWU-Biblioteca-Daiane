@@ -23,12 +23,15 @@ public class MenuParser {
         } else if (option.equals("1")) {
             return Menu.LIST_BOOKS;
         } else if (option.equals("2")) {
-            return Menu.CHECKOUT;
+            return Menu.CHECKOUT_BOOK;
         } else if (option.equals("3")) {
             return Menu.RETURN_BOOK;
         } else if (option.equals("4")) {
             return Menu.LIST_MOVIES;
-        } else {
+        } else if (option.equals("5")) {
+            return Menu.CHECKOUT_MOVIE;
+        }
+        else {
             return Menu.OTHER;
         }
     }
