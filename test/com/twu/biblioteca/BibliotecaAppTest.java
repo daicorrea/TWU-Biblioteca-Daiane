@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Menu.MessageInterface;
+import com.twu.biblioteca.menu.MessageInterface;
 import org.junit.Assert;
 import org.junit.Test;
 

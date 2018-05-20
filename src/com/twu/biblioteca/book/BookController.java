@@ -1,6 +1,6 @@
 package com.twu.biblioteca.book;
 
-import com.twu.biblioteca.Menu.MenuParser;
+import com.twu.biblioteca.menu.MenuParser;
 import com.twu.biblioteca.database.RepositoryAPI;
 import com.twu.biblioteca.utils.MyPrinter;
 

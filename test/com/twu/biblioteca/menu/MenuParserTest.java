@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Menu;
+package com.twu.biblioteca.menu;
 
 import org.junit.Assert;
 import org.junit.Test;

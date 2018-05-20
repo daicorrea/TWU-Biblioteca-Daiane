@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Menu;
+package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.book.Book;
 import com.twu.biblioteca.book.BookControllerInterface;

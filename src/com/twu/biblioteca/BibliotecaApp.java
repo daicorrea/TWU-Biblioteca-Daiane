@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Menu.*;
+import com.twu.biblioteca.menu.*;
 import com.twu.biblioteca.utils.MyPrinter;
 
 public class BibliotecaApp {

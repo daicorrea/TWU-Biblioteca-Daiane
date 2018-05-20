@@ -1,6 +1,6 @@
 package com.twu.biblioteca.movie;
 
-import com.twu.biblioteca.Menu.MenuParser;
+import com.twu.biblioteca.menu.MenuParser;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
